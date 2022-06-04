@@ -14,16 +14,16 @@ const createDate = (dates, position) => {
   
   if(position !== undefined){
     for(let i = 0; i < dates.length; i++) {
-      const convertDate = Date.parse(dates[i]);
+      const convertDate = Date.parse(dates[i])/1000;
       resultDate.push(convertDate);
     }
-    return resultDate[position].toString().slice(0,-3);
+    return resultDate[position].toString();
   } else {
     for(let i = 0; i < dates.length; i++) {
       const convertDate = Date.parse(dates[i])/1000;
       resultDate.push(convertDate);
     }
-    return resultDate.join("-").toString().slice(0, -3);
+    return resultDate.sort().join("-").toString();
   }
 }
 
