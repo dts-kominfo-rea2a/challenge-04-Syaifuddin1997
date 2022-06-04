@@ -20,10 +20,10 @@ const createDate = (dates, position) => {
     return resultDate[position].toString().slice(0,-3);
   } else {
     for(let i = 0; i < dates.length; i++) {
-      const convertDate = Date.parse(dates[i]).toString().slice(0, -3);
+      const convertDate = Date.parse(dates[i]);
       resultDate.push(convertDate);
     }
-    return resultDate.join("-");
+    return resultDate.join("-").toString().slice(0, -3);
   }
 }
 
